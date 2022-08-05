@@ -1,6 +1,11 @@
 module.exports = {
+	eslint: {
+		// Warning: This allows production builds to successfully complete even if
+		// your project has ESLint errors.
+		ignoreDuringBuilds: true,
+	},
 	images: {
-		domains: ['courses-top.ru']
+		domains: ['courses-top.ru'],
 	},
 	webpack(config, options) {
 		config.module.rules.push({
@@ -10,14 +15,16 @@ module.exports = {
 				prettier: false,
 				svgo: true,
 				svgoConfig: {
-					plugins: [{
-						name: 'preset-default',
-						params: {
-							override: {
-								removeViewBox: false
-							}
-						}
-					}],
+					plugins: [
+						{
+							name: 'preset-default',
+							params: {
+								override: {
+									removeViewBox: false,
+								},
+							},
+						},
+					],
 				},
 				titleProp: true,
 			},
