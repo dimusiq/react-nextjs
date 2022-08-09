@@ -7,7 +7,7 @@
 	font-weight: 500;
 	font-size: 18px;
 	line-height: 25px;
-  margin-top: 20px;
+	margin-top: 20px;
 }
 
 .firstLevelActive,
@@ -40,7 +40,16 @@
 	padding: 0 0 0 32px;
 	border-left: 1px solid #dfdfdf;
 }
-.secondBlockOpened:last-child {
+
+.secondLevelBlock {
+	display: none;
+}
+
+.secondLevelBlockOpened {
+	display: block;
+}
+
+.secondLevelBlockOpened:last-child {
 	margin-bottom: 20px;
 }
 
