@@ -34,15 +34,15 @@
 			'header'
 			'body'
 			'footer';
-			gap: 10px;
+		gap: 10px;
 	}
 	.sidebar {
-		display: none;
+		display: none !important;
 	}
 	.header {
 		display: block;
 	}
-		.body {
+	.body {
 		padding: 15px;
 	}
 }

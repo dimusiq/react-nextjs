@@ -5,16 +5,12 @@ import axios from 'axios';
 import { MenuItem } from '../interfaces/menu.interface';
 
 function Search(): JSX.Element {
-	return (
-		<>
-			
-		</>
-	);
+	return <>Search</>;
 }
 
 export default withLayout(Search);
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps<HomeProps> = async () => {
 	const firstCategory = 0;
 	const { data: menu } = await axios.post<MenuItem[]>(
 		process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find',
