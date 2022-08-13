@@ -24,6 +24,7 @@ export const Menu = (): JSX.Element => {
 				})
 			);
 	};
+	
 
 	const buildFirstLevel = () => {
 		return (
@@ -77,7 +78,7 @@ export const Menu = (): JSX.Element => {
 	};
 
 	const buildThirdLevel = (pages: PageItem[], route: string) => {
-		return pages.map((p) => (
+		return (pages.map((p) => (
 			<Link href={`/${route}/${p.alias}`}>
 				<a
 					className={cn(styles.thirdLevel, {
@@ -85,9 +86,9 @@ export const Menu = (): JSX.Element => {
 					})}>
 					{p.category}
 				</a>
-			</Link>
+			</Link>)
 		));
 	};
 
-	return <div className={styles.menu}>{buildFirstLevel()}</div>;
+	return ( <nav className={styles.menu}>{buildFirstLevel()}</nav>);
 };
