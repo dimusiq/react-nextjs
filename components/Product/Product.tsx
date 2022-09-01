@@ -9,7 +9,6 @@ import { declOfNum, priceRu } from '../../helpers/helpers';
 import { Divider } from '../Divider/Divider';
 import Image from 'next/image';
 
-
 export const Product = ({
 	product,
 	className,
@@ -65,25 +64,23 @@ export const Product = ({
 					</div>
 				))}
 			</div>
-			<div className={styles.advantage}>
-				<div className={styles.advBlock}>
-					{product.advantages && (
-						<div className={styles.advantages}>
-							<div className={styles.advTitle}>Преимущества</div>
-							<div>{product.advantages}</div>
-						</div>
-					)}
-				</div>
-				<div>
-					{product.disadvantages && (
-						<div className={styles.disadvantages}>
-							<div className={styles.advTitle}>Недостатки</div>
-							<div>{product.disadvantages} </div>
-						</div>
-					)}
-				</div>
+			<div className={styles.advBlock}>
+				{product.advantages && (
+					<div className={styles.advantages}>
+						<div className={styles.advTitle}>Преимущества</div>
+						<div>{product.advantages}</div>
+					</div>
+				)}
 			</div>
-			<Divider className={styles.hr} />
+			<div>
+				{product.disadvantages && (
+					<div className={styles.disadvantages}>
+						<div className={styles.advTitle}>Недостатки</div>
+						<div>{product.disadvantages} </div>
+					</div>
+				)}
+			</div>
+			<Divider className={cn(styles.hr, styles.hr2)} />
 			<div className={styles.actions}>
 				<Button appearance='primary'>Узнать подробнее</Button>
 				<Button
