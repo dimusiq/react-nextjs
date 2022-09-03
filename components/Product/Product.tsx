@@ -9,6 +9,7 @@ import { declOfNum, priceRu } from '../../helpers/helpers';
 import { Divider } from '../Divider/Divider';
 import Image from 'next/image';
 import { useState } from 'react';
+import { Review } from '../Review/Review';
 
 export const Product = ({
 	product,
@@ -88,8 +89,9 @@ export const Product = ({
 					<Button appearance='primary'>Узнать подробнее</Button>
 					<Button
 						appearance='ghost'
-						arrow={'right'}
-						className={styles.reviewButton}>
+						arrow={isReviewOpened ? 'down' : 'right'}
+						className={styles.reviewButton}
+						onClick={() => setIsReviewOpened(!isReviewOpened)}>
 						Читать отзывы
 					</Button>
 				</div>
@@ -100,8 +102,10 @@ export const Product = ({
 					[styles.opened]: isReviewOpened,
 					[styles.closed]: !isReviewOpened,
 				})}>
-					
-				</Card>
+				{product.reviews.map((r) => (
+					<Review key={r.id} review={r} />
+				))}
+			</Card>
 		</>
 	);
 };
