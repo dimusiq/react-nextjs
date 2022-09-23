@@ -37,6 +37,7 @@ export const Menu = (): JSX.Element => {
 			setMenu(
 				menu.map((m) => {
 					if (m._id.secondCategory == secondCategory) {
+						
 						m.isOpened == !m.isOpened;
 					}
 					return m;
