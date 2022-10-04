@@ -14,6 +14,7 @@ import { useState } from 'react';
 
 export const ReviewForm = ({
 	productId,
+	isOpened,
 	className,
 	...props
 }: ReviewFormProps): JSX.Element => {
@@ -22,7 +23,7 @@ export const ReviewForm = ({
 		control,
 		handleSubmit,
 		formState: { errors },
-		reset
+		reset,
 	} = useForm<IReviewForm>();
 
 	const [isSuccess, setIsSuccess] = useState<boolean>(false);
@@ -36,7 +37,7 @@ export const ReviewForm = ({
 			);
 			if (data.message) {
 				setIsSuccess(true);
-				reset()
+				reset();
 			} else {
 				setError('Что-то пошло не так');
 			}
@@ -54,6 +55,7 @@ export const ReviewForm = ({
 					})}
 					placeholder='Имя'
 					error={errors.name}
+					tabIndex={isOpened ? 0 : 1}
 				/>
 				<Input
 					{...register('title', {
@@ -62,6 +64,7 @@ export const ReviewForm = ({
 					placeholder='Заголовок отзыва'
 					className={styles.title}
 					error={errors.title}
+					tabIndex={isOpened ? 0 : 1}
 				/>
 				<div className={styles.rating}>
 					<span>Оценка:</span>
@@ -78,6 +81,7 @@ export const ReviewForm = ({
 								ref={field.ref}
 								setRating={field.onChange}
 								error={errors.rating}
+								tabIndex={isOpened ? 0 : 1}
 							/>
 						)}
 					/>
@@ -89,9 +93,12 @@ export const ReviewForm = ({
 					placeholder='Текст отзыва'
 					className={styles.description}
 					error={errors.description}
+					tabIndex={isOpened ? 0 : 1}
 				/>
 				<div className={styles.submit}>
-					<Button appearance='primary'>Отправить</Button>
+					<Button appearance='primary' tabIndex={isOpened ? 0 : 1}>
+						Отправить
+					</Button>
 					<span className={styles.info}>
 						* Перед публикацией отзыв пройдет предварительную модерацию и
 						проверку
@@ -111,7 +118,10 @@ export const ReviewForm = ({
 			{error && (
 				<div className={cn(styles.error, styles.panel)}>
 					Что-то пошло не так, попробуйте обновить страницу.
-					<CloseIcon className={styles.close} onClick={() => setError(undefined)} />
+					<CloseIcon
+						className={styles.close}
+						onClick={() => setError(undefined)}
+					/>
 				</div>
 			)}
 		</form>
