@@ -12,6 +12,10 @@
 	margin-right: 8px;
 }
 
+.sortName {
+	display: none;
+}
+
 .sort {
 	display: inline-block;
 	display: grid;
@@ -33,5 +37,4 @@
 
 .sort button:not(.active) {
 	grid-template-columns: 1fr;
-
 }

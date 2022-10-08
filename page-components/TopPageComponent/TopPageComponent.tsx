@@ -20,7 +20,7 @@ export const TopPageComponent = ({
 			sort: SortEnum.Rating,
 		}
 	);
-	const y = useScrollY()
+	const y = useScrollY();
 
 	const setSort = (sort: SortEnum) => {
 		dispatchSort({ type: sort });
@@ -32,11 +32,10 @@ export const TopPageComponent = ({
 
 	return (
 		<div className={styles.wrapper}>
-			
 			<div className={styles.title}>
 				<Htag tag='h1'>{page.title}</Htag>
 				{products && (
-					<Tag color='grey' size='m'>
+					<Tag color='grey' size='m' aria-label={products.length + 'элементов'}>
 						{products.length}
 					</Tag>
 				)}
