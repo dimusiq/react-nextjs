@@ -67,7 +67,7 @@ export const Product = motion(
 						</div>
 						<div className={styles.rating}>
 							<span className='visualyHidden'>
-								{рейтинг + (product.reviewAvg ?? product.initialRating)}
+								{'рейтинг' + (product.reviewAvg ?? product.initialRating)}
 							</span>
 							<Rating rating={product.reviewAvg ?? product.initialRating} />
 						</div>
