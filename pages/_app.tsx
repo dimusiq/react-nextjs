@@ -31,7 +31,8 @@ function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
 			</Head>
 			<YMInitializer 
 				accounts={[]} 
-				options={{ webvisor: true, defer: true }} 
+				options={{ webvisor: true, defer: true }}
+				version='2' 
 			/>
 			<Component {...pageProps} />
 		</>
