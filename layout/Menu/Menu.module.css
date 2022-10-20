@@ -30,6 +30,7 @@
 .secondLevel {
 	margin-bottom: 10px;
 	padding: 0;
+
 	cursor: pointer;
 	text-transform: uppercase;
 
@@ -50,7 +51,7 @@
 
 	list-style: none;
 
-	border-left: 1px solid #dfdfdf;
+	border-left: 1px solid #DFDFDF;
 }
 
 .secondLevelBlock {
@@ -70,6 +71,7 @@
 
 	color: var(--gray-dark);
 	outline-offset: -1px;
+
 	font-size: 14px;
 	font-weight: 500;
 }

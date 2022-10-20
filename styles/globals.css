@@ -2,9 +2,11 @@ html,
 body {
 	margin: 0;
 	padding: 0;
+
 	color: var(--black);
-	background: #f5f6f8;
-	font-family: 'Noto Sans', sans-serif;
+	background: #F5F6F8;
+
+	font-family: "Noto Sans", sans-serif;
 }
 
 a {
@@ -18,23 +20,25 @@ a {
 }
 
 .visualyHidden {
+	position: absolute;
+
+	overflow: hidden;
+
 	width: 0;
 	height: 0;
-	overflow: hidden;
-	position: absolute;
 }
 
 :root {
-	--black: #3b434e;
-	--gray-light: #ebebeb;
-	--gray: #a4a4a4;
-	--gray-dark: #6c7077;
+	--black: #3B434E;
+	--gray-light: #EBEBEB;
+	--gray: #A4A4A4;
+	--gray-dark: #6C7077;
 	--white: white;
-	--primary: #7351f5;
-	--primary-hover: #422f8f;
-	--red: #fc836d;
-	--red-light: #fee291;
-	--green: #127a4f;
-	--green-light: #c8f8e4;
-	--font-family: 'Noto Sans', sans-serif;
+	--primary: #7351F5;
+	--primary-hover: #422F8F;
+	--red: #FC836D;
+	--red-light: #FEE291;
+	--green: #127A4F;
+	--green-light: #C8F8E4;
+	--font-family: "Noto Sans", sans-serif;
 }
