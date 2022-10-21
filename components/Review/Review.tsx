@@ -3,7 +3,7 @@ import styles from './Review.module.css';
 import UserIcon from './user.svg';
 import cn from 'classnames';
 import { ru } from 'date-fns/locale';
-import { format } from 'path';
+import { format } from 'date-fns';
 import { Rating } from '../Rating/Rating';
 
 export const Review = ({

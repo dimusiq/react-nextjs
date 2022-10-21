@@ -43,6 +43,7 @@ export const ReviewForm = ({
 				setError('Что-то пошло не так');
 			}
 		} catch (e) {
+			if (e instanceof Error)
 			setError(e.message);
 		}
 	};

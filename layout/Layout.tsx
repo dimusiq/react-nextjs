@@ -7,6 +7,7 @@ import { Footer } from './Footer/Footer';
 import { FunctionComponent, useRef, useState } from 'react';
 import { AppContextProvider, IAppContext } from '../context/app.context';
 import { Up } from '../components/Up/Up';
+import { KeyboardEvent } from 'react';
 
 const Layout = ({ children }: LayoutProps): JSX.Element => {
 	const [isSkipLinkDisplayed, setIsSkipLinkDisplayed] =

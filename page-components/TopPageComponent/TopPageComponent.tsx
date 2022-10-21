@@ -7,6 +7,7 @@ import { useEffect, useReducer } from 'react';
 import { sortReducer } from './sort.reducer';
 import { useReducedMotion } from 'framer-motion';
 
+
 export const TopPageComponent = ({
 	page,
 	products,

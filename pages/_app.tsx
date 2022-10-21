@@ -1,16 +1,18 @@
 import { AppProps } from '../node_modules/next/app';
 import '../styles/globals.css';
 import Head from '../node_modules/next/head';
+import Router from '../node_modules/next/router';
 import React from 'react';
 import ym from 'react-yandex-metrika';
 import { YMInitializer } from 'react-yandex-metrika';
 
+Router.events.on('routeChangeComplete', (url: string) => {
+	if (typeof window !== 'undefined') {
+		ym('hit', url);
+	}
+});
+
 function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
-	router.events.on('routeChangeComplete', (url: string) => {
-		if (typeof window !== 'undefined') {
-			ym('hit', url);
-		}
-	});
 	return (
 		<>
 			<Head>
@@ -29,10 +31,10 @@ function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
 				/>
 				<meta property='og:local' content='ru_RU' />
 			</Head>
-			<YMInitializer 
-				accounts={[]} 
+			<YMInitializer
+				accounts={[]}
 				options={{ webvisor: true, defer: true }}
-				version='2' 
+				version='2'
 			/>
 			<Component {...pageProps} />
 		</>
