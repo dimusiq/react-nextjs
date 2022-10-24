@@ -1,14 +1,14 @@
 import { Htag } from '../../components';
 import { withLayout } from '../../layout/Layout';
 
-export function Error404(): JSX.Element {
+function Error500(): JSX.Element {
 
 	return (
 		<>
-			<Htag tag='h1'>Ошибка 404</Htag>
+			<Htag tag='h1'>Ошибка 500</Htag>
 			
 		</>
 	);
 }
 
-export default withLayout(Error404);
+export default withLayout(Error500);
